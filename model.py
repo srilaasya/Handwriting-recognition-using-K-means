@@ -25,29 +25,22 @@ plt.matshow(digits.images[10])
 plt.show()
 print(digits.target[10])
 
-# Figure size (width, height)
-
+#Figure size (width, height)
 fig = plt.figure(figsize=(6, 6))
-axes = fig.add_axes([1, 1, 1, 1])
 
-# Adjust the subplots 
-
+#Adjust the subplots 
 fig.subplots_adjust(left=0, right=1, bottom=0, top=1, hspace=0.05, wspace=0.05)
 
-# For each of the 64 images
-
+#For each of the 64 images
 for i in range(64):
 
-    # Initialize the subplots: add a subplot in the grid of 8 by 8, at the i+1-th position
-
+    #Initialize the subplots: add a subplot in the grid of 8 by 8, at the i+1-th position
     ax = fig.add_subplot(8, 8, i+1, xticks=[], yticks=[])
 
-    # Display an image at the i-th position
-
+    #Display an image at the i-th position
     ax.imshow(digits.images[i], cmap=plt.cm.binary, interpolation='nearest')
 
-    # Label the image with the target value
-
+    #Label the image with the target value
     ax.text(0, 7, str(digits.target[i]))
 
 plt.show()
@@ -61,11 +54,11 @@ plt.suptitle('Cluster Center Images', fontsize=14, fontweight='bold')
 for i in range(10):
   ax = fig.add_subplot(2, 5, 1 + i, xticks=[], yticks=[])
 
-  # Display images
+  #Display images
   ax.imshow(model.cluster_centers_[i].reshape((8, 8)),  cmap=plt.cm.binary)
 plt.show()
 
-#Instead of passing a test dataset, I generated a random array by drawing digits 2131
+#Instead of passing a test dataset, I generated a random array by drawing 4 digits- '2131'
 new_samples = np.array([
 [0.00,1.07,4.80,5.34,3.97,0.00,0.00,0.00,0.00,3.05,7.62,6.40,7.63,1.60,0.00,0.00,0.00,2.29,6.41,0.99,7.62,2.29,0.00,0.00,0.00,0.00,0.00,2.36,7.62,2.14,0.00,0.00,0.00,0.00,3.81,7.47,6.48,0.30,0.00,0.00,0.00,2.52,7.62,7.47,4.42,3.59,0.15,0.00,0.00,3.58,7.62,7.62,7.24,6.64,0.46,0.00,0.00,0.15,0.76,0.61,0.00,0.00,0.00,0.00],
 [0.00,3.05,6.79,2.21,0.08,0.00,0.00,0.00,0.99,7.55,7.55,7.62,7.24,2.98,0.00,0.00,2.29,7.62,1.75,2.82,6.33,7.02,0.31,0.00,4.42,7.62,0.53,0.00,2.52,7.62,1.45,0.00,5.34,7.09,0.38,0.00,2.59,7.62,1.45,0.00,2.52,7.63,6.18,3.96,7.09,6.79,0.30,0.00,0.00,3.13,6.41,6.86,5.95,1.45,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00],
